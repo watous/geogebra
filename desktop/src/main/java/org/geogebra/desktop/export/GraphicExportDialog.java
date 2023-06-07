@@ -107,7 +107,7 @@ public class GraphicExportDialog extends Dialog implements KeyListener {
 	private final NumberFormat sizeLabelFormat;
 
 	/** convert text to shapes (eps, pdf, svg) */
-	boolean textAsShapes = true;
+	boolean textAsShapes = false;
 	/** true for transparent images (png) */
 	boolean transparent = true;
 	/** set true if Braille font installed */
@@ -325,7 +325,7 @@ public class GraphicExportDialog extends Dialog implements KeyListener {
 				dpiPanel.remove(cbTransparent);
 				dpiPanel.remove(cbBraille);
 				dpiPanel.add(textAsShapesCB);
-				textAsShapesCB.setSelected(true);
+				textAsShapesCB.setSelected(false);
 				psp.enableAbsoluteSize(false);
 				break;
 			case EMF:
@@ -506,6 +506,8 @@ public class GraphicExportDialog extends Dialog implements KeyListener {
 				formatID = Format.EPS;
 			} else if ("svg".equals(format)) {
 				formatID = Format.SVG;
+			} else if ("pdf".equals(format)) {
+				formatID = Format.PDF;
 			}
 			if (formatID.ordinal() < cbFormat.getItemCount()) {
 				cbFormat.setSelectedIndex(formatID.ordinal());
@@ -550,6 +552,9 @@ public class GraphicExportDialog extends Dialog implements KeyListener {
 			break;
 		case SVG:
 			format = "svg";
+			break;
+		case PDF:
+			format = "pdf";
 			break;
 		default:
 			format = "png";

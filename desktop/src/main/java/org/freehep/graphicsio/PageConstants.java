@@ -87,6 +87,8 @@ public class PageConstants {
 	// Margins
 	public static final String PAGE_MARGINS = "PageMargins";
 
+	public static final String NONE = "None";
+
 	public static final String SMALL = "Small";
 
 	public static final String MEDIUM = "Medium";
@@ -95,6 +97,7 @@ public class PageConstants {
 
 	private static final Map marginTable = new HashMap();
 	static {
+		marginTable.put(NONE, new Insets(0, 0, 0, 0));
 		marginTable.put(SMALL, new Insets(20, 20, 20, 20));
 		marginTable.put(MEDIUM, new Insets(30, 30, 30, 30));
 		marginTable.put(LARGE, new Insets(40, 40, 40, 40));

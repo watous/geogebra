@@ -141,7 +141,7 @@ public class PDFGraphics2D extends AbstractVectorGraphicsIO
 		defaultProperties.setProperty(COMPRESS, true);
 		defaultProperties.setProperty(PAGE_SIZE, PageConstants.INTERNATIONAL);
 		defaultProperties.setProperty(PAGE_MARGINS,
-				PageConstants.getMargins(PageConstants.SMALL));
+				PageConstants.getMargins(PageConstants.NONE));
 		defaultProperties.setProperty(ORIENTATION, PageConstants.PORTRAIT);
 		defaultProperties.setProperty(FIT_TO_PAGE, true);
 		defaultProperties.setProperty(EMBED_FONTS, false);
